@@ -1,0 +1,833 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+  text-decoration: none;
+}
+*::selection{
+  background:#000000;
+  color : #fff;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+/* --------- Header CSS ------------ */
+.header {
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  color: #fff;
+  background-color: #1f1c1cbc;
+  height: 8vh;
+  padding: 0 60px;
+  font-weight: 600;
+  font-size: 13px;
+  /* position:absolute;
+  z-index: 999; */
+}
+.header a {
+  color: #fff;
+}
+.icon {
+  display: flex;
+  padding: 0 150px;
+  gap: 10px;
+  color: white;
+}
+.icon i {
+  cursor: pointer;
+  font-weight: 300;
+  font-size: 20px;
+}
+.icon i:hover{
+  color:#0764a7;
+}
+/* -----------NavBar CSS--------- */
+.navbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  width: 100vw;
+  z-index: 9;
+  padding: 10px 0;
+}
+.navbar img {
+  padding: 5px 60px;
+  width: 18vw;
+  height: 15vh;
+}
+.navbar #btn {
+  color: white;
+  background-image: -webkit-linear-gradient(0deg,#e91f00 0,#e93c00 62%,#e95900 100%);
+  padding: 12px 23px;
+  border: none;
+  cursor: pointer;
+}
+.nav-right {
+  display: flex;
+  gap: 15px;
+  left: 45%;
+  position: absolute;
+}
+.nav-right a{
+    color: black;
+}
+.nav-right .btn {
+  border: none;
+  font-size: 15px;
+  font-weight: 200;
+  background: white;
+  opacity: 0.8;
+  cursor: pointer;
+}
+.dropdown-content li{
+    list-style: none; 
+    cursor: pointer;
+    padding: 10px 5px;
+    opacity: 0.8;
+}
+.dropdown{
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 208px;
+  margin-top: 10px;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.dropdown:hover .dropdown-content{
+  display: block;
+}
+.software-dropdown{
+  position: absolute;
+  left: 95% ;
+  top: -0.5px;
+  background-color: #f9f9f9;
+  width: 15vw;
+  display: none;
+}
+.software-dropdown a{
+  color: black;
+}
+#software :hover{
+  color: red;
+} 
+#software:hover .software-dropdown{
+  display:block;
+}
+.dropdown-content hr{
+    opacity: 0.2;
+}
+.dropdown-content i{
+    position: absolute;
+    left: 185px;
+}
+.drop{
+    display: inline-block;
+    position: relative;
+}
+.menu{
+   display: none;
+   position: absolute;
+   background-color: #f9f9f9;
+   min-width: 200px;
+   padding: 5px 10px;
+   font-size: 15px;
+   right: 5px;
+   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+.menu li{
+    list-style: none; 
+    padding: 8px 0;
+    opacity: 0.8;
+}
+.menu hr{
+    opacity: 0.3;
+}
+.drop:hover .menu{
+    display: block;
+} 
+/* ---------- Enquire Page CSS ------- */
+.enquire-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    overflow: hidden;
+}
+.enquire-container .right{
+    margin: 0 40px;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: 900;
+}
+.enquire-container .right h3{
+    opacity: 0.6;
+    margin: 8px 0;
+}
+.enquire-container .right h1{
+    color: #0764a7;
+    margin: 10px 0;
+}
+.enquire-container .left{
+  margin-right: 25px;
+}
+.enquire-container .right .Enquire-btn{
+    padding: 20px 30px;
+    color: #fff;
+    background-image: -webkit-linear-gradient(0deg,#e91f00 0,#e93c00 62%,#e95900 100%);
+    border: none;
+    margin: 20px 0;
+    font-size: 18px;
+    font-weight: 400;
+    cursor: pointer;
+}
+.footer-container .quick-enquiry{
+  display: none;
+}
+/* ------- Footer CSS ------------ */
+.footer-container{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:absolute;
+    background: #000;
+    padding: 12px 0;
+    color: #fff;
+    bottom: 0px;
+    z-index: 9;
+}
+.footer-container .number-box a{
+    text-decoration: none;
+    color: white;
+}
+.footer-container .number-box{
+    background: #000;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+}
+.footer-container .request-box{
+    background: #000;
+    color: #fff;
+    width: 50%;
+    text-align: center;
+}
+.footer-container .request-box a{
+    text-decoration: none;
+    color: white;
+}
+.footer-container .whatsApp{
+  position: absolute;
+  top: -20vh;
+  right: 3vw;
+  background-color: green;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 2.5rem;
+}
+.whatsApp a{
+  color:#fff;
+}
+.footer-container .live-chat{
+     position: absolute;
+     top: -10vh;
+     right: 5vh;
+     background-color: blue;
+     padding: 4px 8px;
+     font-size: 2.5rem;
+     border-radius: 50%;
+}
+.footer-container .live-chat i{
+   color: #fff;
+}
+/* ------ Details CSS ----------*/
+.details-box{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 12vw;
+}
+.details-box i{
+    font-size: 60px;
+    color: #0764a7;   
+}
+.details-box h4{
+    font-size: 30px;
+    font-weight: 800;
+}
+.details-box span{
+  position: absolute;
+  font-size: 15px;
+  margin-top: -5px;
+}
+.details-box .s1{
+  left: 11vw;
+}
+.details-box .s2{
+   left: 34vw;
+}
+.details-box .s3{
+   left: 62vw;
+}
+.details-box .s4{
+  left: 88vw;
+}
+/* -------------FITA Academy CSS --------- */
+.fita-academy-container{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 80px 0;
+  position: relative;
+}
+ .fita-academy-container .fita-academy{
+  width: 60vw;
+  position: absolute;
+  left: 50px;
+  top: 40px;
+ }
+ .fita-academy-container .fita-academy h1{
+  color: #1f0862d5;
+  font-size: 2.3vw;
+  font-weight: 600;
+  margin-bottom: 15px;
+ }
+ .fita-academy-container .fita-academy p{
+    opacity: 0.8;
+    letter-spacing: 1px;
+    line-height: 20px;
+    font-weight: 520;
+    margin-bottom: 20px;
+ }
+ .fita-academy-container .fita-academy h4{
+  font-size: 1.6vw;
+  font-weight: 550;
+  margin-bottom: 20px;
+ }
+ .fita-academy-container .fita-academy li{
+  list-style: none;
+  opacity: 0.8;
+  padding: 18px 0;
+ }
+ .fita-academy-container .fita-academy i{
+  position: relative;
+  padding: 0 10px;
+  font-size: 1.8vw;
+  color: #0C2087;;
+ }
+ .fita-academy-container .quick-enquiry{
+  width: 25vw;
+  height: 100vh;
+  box-shadow: 0 6px 6.86px 0.14px rgba(0,0,0,.3);
+  background: #ffffff;
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  display: flex;
+  flex-direction: row;
+}
+.quick-enquiry .main-form{
+  padding:  0 1rem ;
+}
+.quick-enquiry .main-form span{
+  font-size: 15px;
+}
+.quick-enquiry .main-form h1{
+  font-size: 1.8vw;
+}
+.quick-enquiry .main-form input{
+  padding: 10px 10px;
+  width: 20vw;
+  border: none;
+  outline: none;
+  background: none;
+}
+.quick-enquiry .main-form div{
+  padding: 8px 0;
+}
+.quick-enquiry .main-form .section-option{
+  position: absolute;
+  padding: 10px 0;
+  border: none;
+  outline: none;
+  width: 4vw;
+  background: transparent;
+}
+#number{
+  padding: 10px 60px;
+  border: none;
+  outline: none;
+  background: none;
+}
+.quick-enquiry .main-form #select-branch{
+  padding: 10px 10px;
+  width: 20vw;
+  border: none;
+  outline: none;
+  background: none;
+}
+.quick-enquiry .main-form #select-course{
+  padding: 10px 10px;
+  width: 20vw;
+  border: none;
+  outline: none;
+  background: none;
+}
+.quick-enquiry .main-form #select-batch{
+  padding: 10px 10px;
+  width: 20vw;
+  border: none;
+  outline: none;
+  background: none;
+}
+.quick-enquiry .main-form .btn{
+  padding: 10px 20px;
+  margin: 0 20px;
+  width: 20vw;
+  color: #fff;
+  background-color:#0C2087;
+  font-size: 20px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+/* ---------------Features CSS  ---------- */
+.features{
+  width: 100vw;
+  position: relative;
+  margin-top: 52%;
+  text-align: center;
+}
+.features .feature-boxes{
+  /* background-color: #b5acac; */
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+.features .feature-boxes h4{
+  margin: 20px 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.features .feature-boxes p{
+   opacity: 0.8;
+   line-height: 25px;
+}
+.features .feature-boxes .box1{
+  width:30vw;
+  height: 40vh;
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+}
+.features .feature-boxes .box1 .fa-clock{
+  color: #0C2087;
+  font-size: 30px;
+}
+.features .feature-boxes .box2{
+  width:30vw;
+  height: 40vh;
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+}
+.features .feature-boxes .box2 .fa-tv{
+  color: rgb(11, 215, 11);
+  font-size: 30px;
+  font-weight: bold;
+}
+.features .feature-boxes .box3{
+  width:30vw;
+  height: 40vh;
+  background-color: #fff;
+  margin-top: 5px;
+  padding: 20px 30px;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+}
+.features .feature-boxes .box3 .fa-circle-notch{
+  color: purple;
+  font-size: 30px;
+  font-weight: bolder;
+}
+.features .feature-boxes .box4{
+  width:30vw;
+  height: 40vh;
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+}
+.features .feature-boxes .box4 .fa-money-bill-1{
+  color: rgb(11, 215, 11);
+  font-size: 30px;
+  font-weight: bold;
+}
+.features .feature-boxes .box5{
+  width:30vw;
+  height: 40vh;
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+}
+.features .feature-boxes .box5 .fa-note-sticky{
+  color: rgb(224, 48, 48);
+  font-size: 30px;
+  font-weight: bold;
+}
+.features .feature-boxes .box6{
+  width:30vw;
+  height: 40vh;
+  background-color: #fff;
+  padding: 20px 30px;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+}
+.features .feature-boxes .box6 .fa-trophy{
+  color: #0764a7;
+  font-size: 30px;
+  font-weight: bold;
+}
+/* --------------Accreditations CSS --------  */
+.Accreditations-container{
+  width: 100vw;
+  margin-top: 50px;
+  background:linear-gradient(#0e64a4 0,#1f39a4 51%,#2f0ea4 100%);
+}
+.Accreditations-container h2{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 10px 0;
+  color: #fff;
+}
+.Accreditations-container .imgs{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 42px;
+  padding: 20px 0;
+}
+.Accreditations-container img{
+  background-color: #fff;
+  padding: 8px 18px;
+  border-radius: 10px;
+}
+/* --------------Accreditations CSS End --------  */
+
+/* ------------StudentTestimonials CSS  Starts --------- */
+.StudentTestimonialsContainer{
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+.StudentTestimonialsContainer h1{
+   margin-bottom: 30px;
+   font-size: 28px;
+   font-weight: 700;
+}
+.StudentTestimonialsContainer iframe{
+  margin-bottom: 30px;
+}
+.StudentTestimonialsContainer .student-feedback{
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.StudentTestimonialsContainer .carrousel{
+  width: 92vw;
+  display: grid;
+  grid-auto-flow: column;
+  scroll-behavior: auto;
+  gap: 1rem;
+  overflow-y: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: auto;
+  padding-bottom: 20px;
+}
+.carrousel::-webkit-scrollbar{
+  display: none;
+}
+.StudentTestimonialsContainer .student-feedback #student{
+  width: 30vw;
+  height: 60vh;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+  padding: 15px 15px;
+  position: relative;
+
+}
+.StudentTestimonialsContainer .student-feedback #student .l-logo{
+  font-size: 40px;
+  font-weight: 800;
+  background-color:#0764a7;
+  color: white;
+  border-radius: 50%;
+  padding: 8px 20px;
+}
+.StudentTestimonialsContainer .student-feedback #student h4{
+  position: absolute;
+  left: 8vw;
+  top: 5vh;
+}
+.StudentTestimonialsContainer .student-feedback #student #rating{
+  position: absolute;
+  left: 8vw;
+  top: 10vh;
+  color: gold;
+  font-size: 10px;
+}
+.StudentTestimonialsContainer .student-feedback #student p{
+  padding: 20px 0;
+  opacity: 0.8;
+  line-height: 28px;
+}
+.StudentTestimonialsContainer .more-details-btn button{
+ font-size: 20px;
+ font-weight: 500;
+ padding: 20px 25px;
+ margin: 20px 0;
+ cursor: pointer;
+ border: none;
+ outline: none;
+ color: white;
+ background-image: -webkit-linear-gradient(0deg,#e91f00 0,#e93c00 62%,#e95900 100%);
+}
+/* Student Testimonial End */
+
+/* ------Top trending Courses CSS Start------- */
+.main-course-container{
+  width: 100vw;
+  margin: 50px 0;
+  padding:  1% calc((100vw / 16) * 1);
+  background-color: rgba(226, 244, 242, 0.432);
+} 
+.main-course-container h1{
+  padding: 25px 0;
+  text-align: center;
+  font-size: 28px;
+  font-weight: 600;
+}
+.main-course-container .carousel-container1 .slider-imgs{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 70px;
+  padding: 20px 0;
+}
+.main-course-container .course1{
+  height: 60vh;
+  box-shadow: 3px 6px 6.86px 0.14px rgba(0,0,0,.3);
+  background-color: #fff;
+}
+.main-course-container .course1 img{
+  width: 350px;
+  height: 250px;
+}
+.main-course-container .course1 h5{
+  padding: 20px 20px;
+  opacity: 0.8;
+}
+.main-course-container .course1 .Star{
+  padding: 20px 20px;
+  color: gold;
+  font-size: 12px;
+}
+.main-course-container .course1 .course-no{
+  font-weight: 550;
+  opacity: 0.8;
+}
+
+/* Our-Students-Work-at CSS Start */
+.Our-Students-Work-at{
+  width: 100vw;
+  text-align: center;
+}
+.Our-Students-Work-at h1{
+  font-size: 30px;
+  font-weight: 550;
+  padding-bottom: 10px;
+}
+.Our-Students-Work-at .image img{
+  width: 90%;
+  height: auto;
+}
+.Our-Students-Work-at button{
+  font-size: 20px;
+  font-weight: 500;
+  padding: 20px 25px;
+  margin: 20px 0;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: white;
+  background-image: -webkit-linear-gradient(0deg,#e91f00 0,#e93c00 62%,#e95900 100%);
+}
+/* Our-Students-Work-at CSS End */
+
+/*------Tutorials CSS start ------- */
+.tutorials-container{
+  width: 100vw;
+}
+.tutorials-container h1{
+  text-align: center;
+  padding: 20px 0;
+  font-size: 27px;
+}
+.tutorials-container h3{
+  text-align: center;
+  opacity: 0.8;
+  padding: 25px 0;
+}
+ .tutorials-container .tutorials-program{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 10px 40px;
+ }
+ .tutorials-container .interview-questions{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 10px 40px;
+ }
+ .tutorials-container .chennai-branches{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  flex-wrap: wrap;
+  margin: 10px 40px;
+ }
+ .tutorials-container .branch{
+  text-align: center;
+ }
+ .tutorials-container button{
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  box-shadow: 2px 2px 4px 1px rgb(0 0 0 / 10%);
+  background-color: #fff;
+  cursor: pointer;
+ }
+ .tutorials-container .read-more{
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 560;
+ }
+ .tutorials-container .read-more a{
+  color: #0C2087;
+ }
+ /*------Tutorials CSS End ------- */
+
+ /*-----Main Footer Css Start--- */
+ .main-footer{
+  height: auto !important ;
+  width: 100vw;
+  background: #000;
+  color: #fff;
+ }
+ .main-footer .footer1{
+   display: flex;
+   margin-top: 40px;
+   justify-content:center;
+   gap: 150px;
+   padding: 15px 0;
+ }
+ .main-footer .footer1 h2{
+  font-size: 28px;
+  padding: 10px 0;
+ }
+ .main-footer .contact-us div{
+  padding: 8px 0;
+ }
+ .main-footer .contact-us a{
+  color: #fff;
+  padding: 0 8px;
+ }
+ .main-footer ul li{
+  list-style: none;
+  padding: 8px 0;
+ }
+ .main-footer ul li a{
+  color: #fff;
+   padding: 0 8px;
+ }
+ .main-footer .social-media{
+  text-align: center;
+ }
+ .main-footer .social-media .icon{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+ }
+ .TRENDING-COURSES{
+   padding: 20px 60px;
+ }
+ .TRENDING-COURSES h2{
+  padding: 20px 0;
+ }
+ .TRENDING-COURSES ul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  gap: 10px;
+  line-height: 4px;
+  letter-spacing: 1px;
+ }
+ .TRENDING-COURSES .read-more{
+  text-align: center;
+  padding: 20px 0;
+  font-size: 18px;
+  font-weight: 560;
+ }
+ .TRENDING-COURSES .read-more a{
+  color: #fff;
+ }
+ .location-area{
+  width: 100%;
+  height: auto;
+ }
+ .location-area .address{
+  margin-top: 3rem !important;
+  padding: 0 70px
+ }
+ .location-area .address h2{
+  padding: 10px 0;
+ }
+ .location-area .address p{
+  padding: 10px 0;
+ }
+ .location-area .address span{
+   padding-bottom: 39px;
+ }
